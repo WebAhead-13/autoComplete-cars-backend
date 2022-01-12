@@ -1,5 +1,10 @@
 {
-  "unique_cars":[],
+  "unique_cars":[{
+    "make": "",
+    "model": "",
+    "rarity":"",
+    "current_count":""
+  }],
   "cars":[{
     "year": 2016,
     "id": 1,
