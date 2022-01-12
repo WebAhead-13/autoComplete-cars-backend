@@ -1,0 +1,28 @@
+{
+  "name": "autocomplete-cars-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js -L"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebAhead-13/autoComplete-cars-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebAhead-13/autoComplete-cars-backend/issues"
+  },
+  "homepage": "https://github.com/WebAhead-13/autoComplete-cars-backend#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^11.0.0",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
