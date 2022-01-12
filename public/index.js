@@ -15,5 +15,13 @@
 const keyUp = () => {
   const name = document.getElementById("car");
   console.log(name.value);
-  //  fetch("http://localhost:3000/autocomplete").then()
+  fetch(`http://localhost:3000/autocomplete/${name.value}`).then(res => {
+   return res.json()
+    // res.map(car => console.log(car))
+  }
+  ).then(data => {
+    data.map(
+      car => console.log(car.make + " " + car.model)
+    )
+  })
 };

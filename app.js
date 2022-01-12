@@ -9,7 +9,19 @@ function layout(content) {
         <title>Cars</title>
       </head>
       <body>
-        <h1>Know your CAR</h1>
+        <nav>
+        <a href="/">Home</a>
+        <a id= "login" class="loginbutton" href="/log-in">log-in</a>
+        <a id= "logout" class="logoutbutton" href="/log-out">log-out</a>
+        </nav>
+        <div>${content}</div>
+      </body>
+      <script src="./index.js"></script>
+    </html>`;
+}
+function home(){
+  return layout(`
+    <h1>Know your CAR</h1>
         <p>
           in here Search for a car we will help you if you don't know what are you
           looking for exactly and get a nice GIF for
@@ -20,10 +32,7 @@ function layout(content) {
           <input type="submit" value="Search" id="submit" />
           <output></output>
         </form>
-        <div>${content}</div>
-      </body>
-      <script src="./index.js"></script>
-    </html>`;
+  `)
 }
 function logIn() {
   return layout(`
@@ -36,4 +45,6 @@ function logIn() {
   `);
 }
 
-module.exports = { logIn };
+
+
+module.exports = { logIn,home};

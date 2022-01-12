@@ -1,10 +1,36 @@
 {
   "unique_cars":[{
-    "make": "",
+    "make": "a",
+    "model": "",
+    "rarity":"",
+    "current_count":""
+  },
+  {
+    "make": "b",
+    "model": "",
+    "rarity":"",
+    "current_count":""
+  },
+  {
+    "make": "ab",
+    "model": "",
+    "rarity":"",
+    "current_count":""
+  },
+  {
+    "make": "ba",
+    "model": "",
+    "rarity":"",
+    "current_count":""
+  },{
+    "make": "c",
     "model": "",
     "rarity":"",
     "current_count":""
   }],
+
+
+  
   "cars":[{
     "year": 2016,
     "id": 1,
