@@ -1,6 +1,8 @@
 // const form = document.querySelector("form");
 // const output = document.querySelector("output");
 
+const datalist = document.querySelector("datalist");
+
 // form.addEventListener("submit", (event) => {
 //   // stop the form submitting and reloading the page
 //   event.preventDefault();
@@ -14,7 +16,9 @@
 
 const keyUp = () => {
   const name = document.getElementById("car");
+
   console.log(name.value);
+
   fetch(`http://localhost:3000/autocomplete/${name.value}`)
     .then((res) => {
       return res.json();
@@ -22,5 +26,19 @@ const keyUp = () => {
     })
     .then((data) => {
       data.map((car) => console.log(car.make + " " + car.model));
+      if (data.error) {
+        // show something to the user
+        alert("error");
+      }
+
+      datalist.innerHTML = "";
+      data.map((car) => {
+        const listItem = document.createElement("option");
+
+        listItem.textContent = car.make + " " + car.model;
+
+        datalist.appendChild(listItem);
+      });
+      // console.log(car.make + " " + car.model));
     });
 };

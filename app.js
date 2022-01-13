@@ -1,3 +1,5 @@
+const { cookie } = require("express/lib/response");
+
 function layout(content) {
   return `<!DOCTYPE html>
     <html lang="en">
@@ -26,10 +28,15 @@ function home() {
           in here Search for a car we will help you if you don't know what are you
           looking for exactly and get a nice GIF for
         </p>
-        <form action="">
+        <form action="/search" method="POST">
           <label for="car" id="car_label" name="car_label">choose a car</label>
           <input type="text" placeholder="example: bmw" id="car" name="car" onkeyup="keyUp()"/>
           <input type="submit" value="Search" id="  " />
+
+          <input type="text" placeholder="example: bmw" id="car" name="car" onkeyup="keyUp()" list="carList"/>
+          <datalist id="carList"> 
+          </datalist>
+          <input type="submit" value="Search" id="submit" />
           <output></output>
         </form>
   `);
