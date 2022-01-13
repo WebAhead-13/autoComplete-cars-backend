@@ -10,8 +10,7 @@ const PORT = 3000;
 const json = require("./database.json");
 const server = express();
 server.use(cookieParser());
-server.use(express.urlencoded())
-
+server.use(express.urlencoded());
 
 server.get("/", (req, res) => {
   const html = app.home();
@@ -37,13 +36,20 @@ server.get("/log-out", (req, res) => {
 
 server.get("/autocomplete/:carName", (req, res) => {
   const carName = req.params.carName;
-  var myData = json.cars.filter(car => car.make.startsWith(carName));
-  console.log(myData.length);
-  if (myData.length > 0){
+  const carSplit = carName.split(" ");
+  const myData = json.cars.filter((car) => {
+    if (carSplit[1]) {
+      return (
+        car.make.startsWith(carSplit[0]) && car.model.startsWith(carSplit[1])
+      );
+    }
+    return car.make.startsWith(carSplit[0]);
+  });
+
+  if (myData.length > 0) {
     res.send(myData);
-  }
-  else {
-    res.send([{"make":"Not Found"}])
+  } else {
+    res.send([{ make: "Not Found" }]);
   }
 });
 
