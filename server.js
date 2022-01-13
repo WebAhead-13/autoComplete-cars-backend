@@ -29,20 +29,17 @@ server.post("/log-in", (req, res) => {
   res.redirect("/");
 });
 
-server.post("/search", checkAuth, (req, res) => {
-  const carMake = req.body.car;
+server.get("/search/:myCar", checkAuth, (req, res) => {
+  const carMake = req.params.myCar;
   const carModel = carMake.split(" ")[1];
 
-  // const myData = json.cars.filter((car) => {
-  //   if (carSplit[1]) {
-  //     return (
-  //       car.make.startsWith(carSplit[0]) && car.model.startsWith(carSplit[1])
-  //     );
-  //   }
-  //   return car.make.startsWith(carSplit[0]);
-  // });
+  const myCar = json.cars.filter((car) => {
+    return car.model == carModel;
+  });
   console.log(carMake);
+  res.send(myCar);
 });
+
 server.get("/log-out", (req, res) => {
   res.clearCookie("user");
   res.redirect("/");
@@ -70,10 +67,7 @@ server.get("/autocomplete/:carName", (req, res) => {
 function checkAuth(req, res, next) {
   const user = req.cookies.user;
   if (!user) {
-    res.status(401).send(`
-        <h1>Please log in to view this page</h1>
-        <a href="/log-in">Log in</a>
-      `);
+    res.status(401).send({ error: true });
   } else {
     next();
   }
