@@ -28,7 +28,10 @@ function home() {
         </p>
         <form action="">
           <label for="car" id="car_label" name="car_label">choose a car</label>
-          <input type="text" placeholder="example: bmw" id="car" name="car" onkeyup="keyUp()"/>
+          <input type="text" placeholder="example: bmw" id="car" name="car" onkeyup="keyUp()" list="carList"/>
+          <datalist id="carList"> 
+          <option value="bmw">
+          </datalist>
           <input type="submit" value="Search" id="submit" />
           <output></output>
         </form>

@@ -49,7 +49,7 @@ server.get("/autocomplete/:carName", (req, res) => {
   if (myData.length > 0) {
     res.send(myData);
   } else {
-    res.send([{ make: "Not Found" }]);
+    res.send({ error: "Not Found" });
   }
 });
 
