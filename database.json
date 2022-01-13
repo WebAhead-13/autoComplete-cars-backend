@@ -1,32 +1,42 @@
 {
   "unique_cars":[{
-    "make": "a",
-    "model": "",
-    "rarity":"",
-    "current_count":""
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "horsepower":"296",
+    "last_price":"$70 million",
+    "price_as_new": "$18,000",
+    "cover": "https://ca-times.brightspotcdn.com/dims4/default/efe4729/2147483647/strip/true/crop/2048x1463+0+0/resize/1440x1029!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6b%2Fbc%2F711c3d0b748b81261664d289f989%2Fla-fi-hy-autos-2014-monterey-car-week-highligh-005"
   },
   {
-    "make": "b",
-    "model": "",
-    "rarity":"",
-    "current_count":""
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "horsepower":"296",
+    "last_price":"$70 million",
+    "price_as_new": "$18,000",
+    "cover": " "
   },
   {
-    "make": "ab",
-    "model": "",
-    "rarity":"",
-    "current_count":""
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "horsepower":"296",
+    "last_price":"$70 million",
+    "price_as_new": "$18,000",
+    "cover": " "
   },
   {
-    "make": "ba",
-    "model": "",
-    "rarity":"",
-    "current_count":""
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "horsepower":"296",
+    "last_price":"$70 million",
+    "price_as_new": "$18,000",
+    "cover":" "
   },{
-    "make": "c",
-    "model": "",
-    "rarity":"",
-    "current_count":""
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "horsepower":"296",
+    "last_price":"$70 million",
+    "price_as_new": "$18,000",
+    "cover":" "
   }],
 
 

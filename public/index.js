@@ -1,18 +1,28 @@
-// const form = document.querySelector("form");
+fetch(`http://localhost:3000/unique_cars`)
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data);
+    for (let i = 1; i < 5; i++) {
+      let card = document.createElement("div");
+      card.classList.add("flip-card");
+      let flipCardInner = document.createElement("div");
+      flipCardInner.classList.add("flip-card-inner");
+      let flipCardFront = document.createElement("flip-card-front");
+      const cover = document.createElement("img");
+      cover.src = data[i].cover;
+      const U_HP = "horsepower" + data[i].horsepower;
+      card.appendChild(flipCardInner);
+      card.appendChild(flipCardFront);
+      card.appendChild(cover);
+      card.appendChild(U_HP);
+    }
+  });
+
 const output = document.querySelector("output");
 
 const datalist = document.querySelector("datalist");
-
-// form.addEventListener("submit", (event) => {
-//   // stop the form submitting and reloading the page
-//   event.preventDefault();
-
-//   // clear out any previous results
-//   output.innerHTML = "";
-
-//   // get the value of the field with name="pokemon"
-//   const formData = new FormData(event.target);
-// });
 
 const login_button = document.getElementById("login");
 const logout_button = document.getElementById("logout");
@@ -36,7 +46,9 @@ const keyUp = () => {
     .then((data) => {
       if (data.error) {
         // show something to the user
-        alert("error");
+        alert(
+          "The value you have entered is incorrect , please try typing a valid car name"
+        );
       }
 
       datalist.innerHTML = "";
@@ -50,7 +62,6 @@ const keyUp = () => {
       // console.log(car.make + " " + car.model));
     });
 };
-
 // const mySearch = myInput;
 document.getElementById("submit").addEventListener("click", (event) => {
   const myInput = document.getElementById("car");
@@ -62,10 +73,9 @@ document.getElementById("submit").addEventListener("click", (event) => {
     .then((data) => {
       if (data.error) {
         window.location.href = "http://localhost:3000/log-in";
-      }
-      // console.log(data);
-      else {
-        output.innerHTML = "";
+      } else {
+        console.log(data);
+        output.innerHTML = " ";
         const make = document.createElement("div");
         make.textContent = data[0].make + " " + data[0].model;
         const HP = document.createElement("div");
@@ -80,26 +90,5 @@ document.getElementById("submit").addEventListener("click", (event) => {
         output.appendChild(img);
         console.log(data[0]);
       }
-      // let card = document.createElement("div");
-      //       card.classList.add("card");
-
-      //       let stat =document.createElement("div")
-      //       const title = document.createElement("h2");
-      //       title.textContent = pokemonData.name;
-
-      //       const statsArr = pokemonData.stats;
-      //       card.appendChild(title);
-      //       for(let i=0;i<6;i++) {
-      //           let discr1=document.createElement("h2")
-
-      //           let icon =document.createElement("img")
-      //           icon.src = 'icon'+i+'.png'
-      //           icon.width = 40
-
-      //           discr1.innerHTML=statsArr[i].stat.name + " : " + statsArr[i].base_stat;
-      //           discr1.classList.add("h2"+ i)
-      //           discr1.appendChild(icon)
-      //           card.appendChild(discr1)
-      //       }
     });
 });

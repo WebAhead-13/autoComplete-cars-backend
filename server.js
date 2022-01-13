@@ -16,7 +16,10 @@ server.get("/", (req, res) => {
   const html = app.home();
   res.send(html);
 });
-
+server.get("/unique_cars", (req, res) => {
+  const s_car = json.unique_cars;
+  res.send(s_car);
+});
 server.get("/log-in", (req, res) => {
   const html = app.logIn();
   res.send(html);
