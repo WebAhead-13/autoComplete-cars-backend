@@ -19,7 +19,7 @@ function layout(content) {
       <script src="./index.js"></script>
     </html>`;
 }
-function home(){
+function home() {
   return layout(`
     <h1>Know your CAR</h1>
         <p>
@@ -32,7 +32,7 @@ function home(){
           <input type="submit" value="Search" id="submit" />
           <output></output>
         </form>
-  `)
+  `);
 }
 function logIn() {
   return layout(`
@@ -45,6 +45,4 @@ function logIn() {
   `);
 }
 
-
-
-module.exports = { logIn,home};
+module.exports = { logIn, home };
