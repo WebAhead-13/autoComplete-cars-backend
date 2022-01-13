@@ -32,7 +32,6 @@ server.post("/log-in", (req, res) => {
 server.post("/search", checkAuth, (req, res) => {
   const carMake = req.body.car;
   const carModel = carMake.split(" ")[1];
-
   // const myData = json.cars.filter((car) => {
   //   if (carSplit[1]) {
   //     return (
