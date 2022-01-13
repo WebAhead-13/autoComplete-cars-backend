@@ -1,7 +1,26 @@
 h1 {
   color: rebeccapurple;
 }
-
+nav {
+  display: flex;
+  justify-content: space-between;
+}
 datalist {
   display: none;
+}
+/* ------ if no cookie  */
+
+.loginbutton {
+  /* visibility: visible; */
+  display: none;
+}
+
+.logoutbutton {
+  /* visibility: visible; */
+  display: none;
+}
+
+.visible {
+  /* visibility: visible; */
+  display: block;
 }

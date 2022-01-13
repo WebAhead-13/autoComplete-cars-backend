@@ -14,6 +14,17 @@ const datalist = document.querySelector("datalist");
 //   const formData = new FormData(event.target);
 // });
 
+const login_button = document.getElementById("login");
+const logout_button = document.getElementById("logout");
+console.log(login_button);
+if (document.cookie) {
+  logout_button.classList.add("visible");
+  login_button.classList.remove("visible");
+} else {
+  login_button.classList.add("visible");
+  logout_button.classList.remove("visible");
+}
+
 const keyUp = () => {
   const name = document.getElementById("car");
 
@@ -39,3 +50,19 @@ const keyUp = () => {
       // console.log(car.make + " " + car.model));
     });
 };
+
+// const mySearch = myInput;
+document.getElementById("submit").addEventListener("click", (event) => {
+  const myInput = document.getElementById("car");
+  event.preventDefault();
+  fetch(`http://localhost:3000/search/${myInput.value}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data.error) {
+        window.location.href = "http://localhost:3000/log-in";
+      }
+      console.log(data);
+    });
+});
