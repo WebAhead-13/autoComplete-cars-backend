@@ -29,6 +29,20 @@ server.post("/log-in", (req, res) => {
   res.redirect("/");
 });
 
+server.post("/search", checkAuth, (req, res) => {
+  const carMake = req.body.car;
+  const carModel = carMake.split(" ")[1];
+
+  // const myData = json.cars.filter((car) => {
+  //   if (carSplit[1]) {
+  //     return (
+  //       car.make.startsWith(carSplit[0]) && car.model.startsWith(carSplit[1])
+  //     );
+  //   }
+  //   return car.make.startsWith(carSplit[0]);
+  // });
+  console.log(carMake);
+});
 server.get("/log-out", (req, res) => {
   res.clearCookie("user");
   res.redirect("/");
@@ -54,7 +68,7 @@ server.get("/autocomplete/:carName", (req, res) => {
 });
 
 function checkAuth(req, res, next) {
-  const user = req.user;
+  const user = req.cookies.user;
   if (!user) {
     res.status(401).send(`
         <h1>Please log in to view this page</h1>
@@ -64,7 +78,7 @@ function checkAuth(req, res, next) {
     next();
   }
 }
-
+server.get;
 server.use(express.static("public"));
 
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
