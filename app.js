@@ -29,7 +29,7 @@ function home() {
         <form action="">
           <label for="car" id="car_label" name="car_label">choose a car</label>
           <input type="text" placeholder="example: bmw" id="car" name="car" onkeyup="keyUp()"/>
-          <input type="submit" value="Search" id="submit" />
+          <input type="submit" value="Search" id="  " />
           <output></output>
         </form>
   `);
