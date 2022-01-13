@@ -1,5 +1,5 @@
 // const form = document.querySelector("form");
-// const output = document.querySelector("output");
+const output = document.querySelector("output");
 
 const datalist = document.querySelector("datalist");
 
@@ -63,6 +63,43 @@ document.getElementById("submit").addEventListener("click", (event) => {
       if (data.error) {
         window.location.href = "http://localhost:3000/log-in";
       }
-      console.log(data);
+      // console.log(data);
+      else {
+        output.innerHTML = "";
+        const make = document.createElement("div");
+        make.textContent = data[0].make + " " + data[0].model;
+        const HP = document.createElement("div");
+        HP.textContent = "horsepower : " + data[0].horsepower;
+        const price = document.createElement("div");
+        price.textContent = "price as new : " + data[0].price + "$";
+        const img = document.createElement("img");
+        img.src = data[0].img_url;
+        output.appendChild(make);
+        output.appendChild(HP);
+        output.appendChild(price);
+        output.appendChild(img);
+        console.log(data[0]);
+      }
+      // let card = document.createElement("div");
+      //       card.classList.add("card");
+
+      //       let stat =document.createElement("div")
+      //       const title = document.createElement("h2");
+      //       title.textContent = pokemonData.name;
+
+      //       const statsArr = pokemonData.stats;
+      //       card.appendChild(title);
+      //       for(let i=0;i<6;i++) {
+      //           let discr1=document.createElement("h2")
+
+      //           let icon =document.createElement("img")
+      //           icon.src = 'icon'+i+'.png'
+      //           icon.width = 40
+
+      //           discr1.innerHTML=statsArr[i].stat.name + " : " + statsArr[i].base_stat;
+      //           discr1.classList.add("h2"+ i)
+      //           discr1.appendChild(icon)
+      //           card.appendChild(discr1)
+      //       }
     });
 });

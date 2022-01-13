@@ -34,7 +34,7 @@ function home() {
           <input type="text" placeholder="example: bmw" id="car" name="car" onkeyup="keyUp()" list="carList"/>
           <datalist id="carList"> 
           </datalist>
-          <input type="submit" value="Search" id="submit" />
+          <input type="submit" value="Search" id="submit" required/>
           <output></output>
         </form>
   `);
