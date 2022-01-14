@@ -1,6 +1,14 @@
 h1 {
-  color: rebeccapurple;
+  text-align: left;
+
+  margin-left: 60px;
+  margin-top: 20px;
+  color: #fff;
 }
+h1:hover {
+  text-shadow: 14px 14px 14px #fff;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -13,18 +21,60 @@ datalist {
 .loginbutton {
   /* visibility: visible; */
   display: none;
+  padding: 8px;
+  color: yellow;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
 }
-
+.loginbutton:hover {
+  color: #fff;
+}
+.loginbutton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 .logoutbutton {
   /* visibility: visible; */
   display: none;
+  padding: 8px;
+  color: yellow;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
 }
-
+.logoutbutton:hover {
+  color: #fff;
+}
+.logoutbutton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 .visible {
   /* visibility: visible; */
   display: block;
 }
 
+.homeButton {
+  padding: 8px;
+  color: yellow;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
+}
+.homeButton:hover {
+  color: #fff;
+}
+.homeButton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
@@ -70,4 +120,92 @@ datalist {
   background-color: dodgerblue;
   color: white;
   transform: rotateY(180deg);
+}
+
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.image {
+  width: 50%;
+  float: right;
+  transform: translate(-5%, -50%);
+  overflow:unset;
+  
+}
+
+.image img {
+  width: 100%;
+  margin-top: -200px;
+  margin-left: 70px;
+  border-radius: 20%;
+  transition: 5s all ease-in-out;
+  float: right;
+ 
+  padding-left: 300px;
+}
+.image:hover img
+{
+  transform: scale(1.5) rotate(-15deg);
+  
+}
+.content b {
+  color: yellow;
+  font-size: 100px;
+}
+
+.content p {
+  text-align: left;
+  font-size: 20px;
+  margin-left: 60px;
+  margin-top: 20px;
+  color: #fff;
+}
+/* .text {
+  color: #cd5c5c;
+  padding-left: 20px;
+  font: italic 10px "Fira Sans", serif;
+  font-size: x-large;
+} */
+
+.buttonStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.buttonStyle {
+  position: absolute;
+  color:yellow;
+  font-size: 20px;
+  font-style: initial;
+}
+.buttonStyle input {
+  font-size: 25px;
+  border: 1px solid #fff;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  
+}
+
+/* .buttonStyle:hover {
+  color: #fff;
+} */
+.searchbutton:hover{
+ background-color;:yellow
+}
+
+  .searchbutton:active {
+    background-color: yellow;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
 }
