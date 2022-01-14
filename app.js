@@ -23,28 +23,7 @@ function layout(content) {
 }
 function home() {
   return layout(`
-    <div class = special_cars id= special_cars>
-    Hereby for your nostalgic lovers, you can find brief overview of iconic collector cars.
-    further search options will be added soon. -stay tuned for updates-
-    <div class="flip-card">
-    <div class="flip-card-inner">
-    <div class="flip-card-front">
-      <img id=u1img src="https://ca-times.brightspotcdn.com/dims4/default/efe4729/2147483647/strip/true/crop/2048x1463+0+0/resize/1440x1029!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F6b%2Fbc%2F711c3d0b748b81261664d289f989%2Fla-fi-hy-autos-2014-monterey-car-week-highligh-005" alt="Avatar" style="width:300px;height:300px;">
-    </div>
-    <div class="flip-card-back">
-      <h1 id= u1make ></h1>
-      <p id=u1model ></p>
-      <p id=u1HP >horsepower : 296</p>
-      <p></p>
-      <p>$70 million for a 1963 version</p>
-      <p>price as new </p>
-      <p>$18,000 </p>
-
-    </div>
-  </div>
-</div>
-    </div>
-
+  <cards></cards>
     <h1>Know your CAR</h1>
         <p>
         The platform will provide you selected information and an image,

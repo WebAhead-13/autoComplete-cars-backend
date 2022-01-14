@@ -17,6 +17,7 @@ fetch(`http://localhost:3000/unique_cars`)
       card.appendChild(flipCardFront);
       card.appendChild(cover);
       card.appendChild(U_HP);
+      cards.appendChild(card);
     }
   });
 

@@ -18,6 +18,7 @@ server.get("/", (req, res) => {
 });
 server.get("/unique_cars", (req, res) => {
   const s_car = json.unique_cars;
+  return s_car;
   res.send(s_car);
 });
 server.get("/log-in", (req, res) => {
