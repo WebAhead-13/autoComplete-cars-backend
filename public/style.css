@@ -1,6 +1,5 @@
 h1 {
   text-align: left;
-
   margin-left: 60px;
   margin-top: 20px;
   color: #fff;
@@ -131,8 +130,7 @@ datalist {
   width: 50%;
   float: right;
   transform: translate(-5%, -50%);
-  overflow:unset;
-  
+  overflow: unset;
 }
 
 .image img {
@@ -142,13 +140,11 @@ datalist {
   border-radius: 20%;
   transition: 5s all ease-in-out;
   float: right;
- 
+
   padding-left: 300px;
 }
-.image:hover img
-{
+.image:hover img {
   transform: scale(1.5) rotate(-15deg);
-  
 }
 .content b {
   color: yellow;
@@ -183,7 +179,7 @@ body {
 
 .buttonStyle {
   position: absolute;
-  color:yellow;
+  color: yellow;
   font-size: 20px;
   font-style: initial;
 }
@@ -193,19 +189,54 @@ body {
   margin: 8px;
   padding: 8px;
   border-radius: 10px;
-  
 }
 
 /* .buttonStyle:hover {
   color: #fff;
 } */
-.searchbutton:hover{
- background-color;:yellow
+.searchbutton:hover {
+  background-color: yellow;
 }
 
-  .searchbutton:active {
-    background-color: yellow;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
+.searchbutton:active {
+  background-color: yellow;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+output {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
+  margin-bottom: 1.6%;
+  background: inherit;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  size-adjust: auto;
+}
+
+output img {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  size: 40px;
+  margin: 10px;
+}
+
+output h2 {
+  font-family: courier;
+  color: #333;
+  margin-left: auto;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+output div {
+  margin-left: auto;
+  padding: 0;
+  list-style: none;
 }

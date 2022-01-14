@@ -4,21 +4,21 @@ fetch(`http://localhost:3000/unique_cars`)
   })
   .then((data) => {
     console.log(data);
-    for (let i = 1; i < 5; i++) {
-      let card = document.createElement("div");
-      card.classList.add("flip-card");
-      let flipCardInner = document.createElement("div");
-      flipCardInner.classList.add("flip-card-inner");
-      let flipCardFront = document.createElement("flip-card-front");
-      const cover = document.createElement("img");
-      cover.src = data[i].cover;
-      const U_HP = "horsepower" + data[i].horsepower;
-      card.appendChild(flipCardInner);
-      card.appendChild(flipCardFront);
-      card.appendChild(cover);
-      card.appendChild(U_HP);
-      cards.appendChild(card);
-    }
+    // for (let i = 1; i < 5; i++) {
+    //   let card = document.createElement("div");
+    //   card.classList.add("flip-card");
+    //   let flipCardInner = document.createElement("div");
+    //   flipCardInner.classList.add("flip-card-inner");
+    //   let flipCardFront = document.createElement("flip-card-front");
+    //   const cover = document.createElement("img");
+    //   cover.src = data[i].cover;
+    //   const U_HP = "horsepower" + data[i].horsepower;
+    //   card.appendChild(flipCardInner);
+    //   card.appendChild(flipCardFront);
+    //   card.appendChild(cover);
+    //   card.appendChild(U_HP);
+    //   cards.appendChild(card);
+    //   }
   });
 
 const output = document.querySelector("output");
@@ -77,7 +77,7 @@ document.getElementById("submit").addEventListener("click", (event) => {
       } else {
         console.log(data);
         output.innerHTML = " ";
-        const make = document.createElement("div");
+        const make = document.createElement("h2");
         make.textContent = data[0].make + " " + data[0].model;
         const HP = document.createElement("div");
         HP.textContent = "horsepower : " + data[0].horsepower;
