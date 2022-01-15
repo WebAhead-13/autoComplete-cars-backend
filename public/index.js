@@ -3,7 +3,42 @@ fetch(`http://localhost:3000/unique_cars`)
     return res.json();
   })
   .then((data) => {
+    const flip_cards_div = document.getElementById("flipCards");
     console.log(data);
+    data.forEach((element) => {
+      const flip_card_inner = document.createElement("div");
+      flip_cards_div.appendChild(flip_card_inner);
+
+      const flip_card_back = document.createElement("div");
+      flip_card_back.classList.add("flip-card-back");
+      flip_card_inner.appendChild(flip_card_back);
+
+      const flip_card_front = document.createElement("div");
+      flip_card_front.classList.add("flip-card-front");
+      flip_card_inner.appendChild(flip_card_front);
+
+      const front_image = document.createElement("img");
+      front_image.src = element.cover;
+      flip_card_front.appendChild(front_image);
+
+      const horsepower_ = document.createElement("p");
+      horsepower_.innerHTML = element.horsepower;
+      const make_ = document.createElement("h1");
+      make_.innerHTML = element.make;
+      const model_ = document.createElement("p");
+      model_.innerHTML = element.model;
+      const lastPrice = document.createElement("p");
+      lastPrice.innerHTML = element.last_price;
+      const priceAsNew = document.createElement("p");
+      priceAsNew.innerHTML = element.price_as_new;
+
+      flip_card_back.appendChild(make_);
+      flip_card_back.appendChild(model_);
+      flip_card_back.appendChild(horsepower_);
+      flip_card_back.appendChild(priceAsNew);
+      flip_card_back.appendChild(lastPrice);
+    });
+
     // for (let i = 1; i < 5; i++) {
     //   let card = document.createElement("div");
     //   card.classList.add("flip-card");

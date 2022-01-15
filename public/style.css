@@ -74,6 +74,12 @@ datalist {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+.flipCards {
+  display: flex;
+  width: 20%;
+  height: 20%;
+}
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
   background-color: transparent;
@@ -129,7 +135,7 @@ datalist {
 .image {
   width: 50%;
   float: right;
-  transform: translate(-5%, -50%);
+  /* transform: translate(-5%, -50%); */
   overflow: unset;
 }
 
@@ -164,7 +170,9 @@ datalist {
   font: italic 10px "Fira Sans", serif;
   font-size: x-large;
 } */
-
+form {
+  margin-left: 20px;
+}
 .buttonStyle {
   display: flex;
   align-items: center;
