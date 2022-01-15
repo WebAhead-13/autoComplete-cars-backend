@@ -6,8 +6,13 @@ fetch(`http://localhost:3000/unique_cars`)
     const flip_cards_div = document.getElementById("flipCards");
     console.log(data);
     data.forEach((element) => {
+      const flip_card = document.createElement("div");
+      flip_card.classList.add("flip-card");
+      flip_cards_div.appendChild(flip_card);
+
       const flip_card_inner = document.createElement("div");
-      flip_cards_div.appendChild(flip_card_inner);
+      flip_card_inner.classList.add("flip-card-inner");
+      flip_card.appendChild(flip_card_inner);
 
       const flip_card_back = document.createElement("div");
       flip_card_back.classList.add("flip-card-back");
@@ -18,7 +23,7 @@ fetch(`http://localhost:3000/unique_cars`)
       flip_card_inner.appendChild(flip_card_front);
 
       const front_image = document.createElement("img");
-      front_image.src = element.cover;
+      front_image.src = "./download.png";
       flip_card_front.appendChild(front_image);
 
       const horsepower_ = document.createElement("p");
