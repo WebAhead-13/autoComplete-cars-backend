@@ -1,6 +1,13 @@
 h1 {
-  color: rebeccapurple;
+  text-align: left;
+  margin-left: 60px;
+  margin-top: 20px;
+  color: #fff;
 }
+h1:hover {
+  text-shadow: 14px 14px 14px #fff;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -13,14 +20,223 @@ datalist {
 .loginbutton {
   /* visibility: visible; */
   display: none;
+  padding: 8px;
+  color: yellow;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
 }
-
+.loginbutton:hover {
+  color: #fff;
+}
+.loginbutton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 .logoutbutton {
   /* visibility: visible; */
   display: none;
+  padding: 8px;
+  color: yellow;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
 }
-
+.logoutbutton:hover {
+  color: #fff;
+}
+.logoutbutton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 .visible {
   /* visibility: visible; */
   display: block;
+}
+
+.homeButton {
+  padding: 8px;
+  color: yellow;
+  font-size: 30px;
+  text-decoration: none;
+  border-bottom: 2px solid #fff;
+  border-radius: 20px;
+  position: relative;
+}
+.homeButton:hover {
+  color: #fff;
+}
+.homeButton:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.image {
+  width: 50%;
+  float: right;
+  transform: translate(-5%, -50%);
+  overflow: unset;
+}
+
+.image img {
+  width: 100%;
+  margin-top: -200px;
+  margin-left: 70px;
+  border-radius: 20%;
+  transition: 5s all ease-in-out;
+  float: right;
+
+  padding-left: 300px;
+}
+.image:hover img {
+  transform: scale(1.5) rotate(-15deg);
+}
+.content b {
+  color: yellow;
+  font-size: 100px;
+}
+
+.content p {
+  text-align: left;
+  font-size: 20px;
+  margin-left: 60px;
+  margin-top: 20px;
+  color: #fff;
+}
+/* .text {
+  color: #cd5c5c;
+  padding-left: 20px;
+  font: italic 10px "Fira Sans", serif;
+  font-size: x-large;
+} */
+
+.buttonStyle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: black;
+  padding: 0;
+  margin: 0;
+}
+
+.buttonStyle {
+  position: absolute;
+  color: yellow;
+  font-size: 20px;
+  font-style: initial;
+}
+.buttonStyle input {
+  font-size: 25px;
+  border: 1px solid #fff;
+  margin: 8px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+/* .buttonStyle:hover {
+  color: #fff;
+} */
+.searchbutton:hover {
+  background-color: yellow;
+}
+
+.searchbutton:active {
+  background-color: yellow;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+output {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto;
+  box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
+  margin-bottom: 1.6%;
+  background: inherit;
+  line-height: 1.4;
+  font-family: sans-serif;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 0;
+  size-adjust: auto;
+}
+
+output img {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  size: 40px;
+  margin: 10px;
+}
+
+output h2 {
+  font-family: courier;
+  color: #333;
+  margin-left: auto;
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+output div {
+  margin-left: auto;
+  padding: 0;
+  list-style: none;
 }

@@ -1,18 +1,29 @@
-// const form = document.querySelector("form");
+fetch(`http://localhost:3000/unique_cars`)
+  .then((res) => {
+    return res.json();
+  })
+  .then((data) => {
+    console.log(data);
+    // for (let i = 1; i < 5; i++) {
+    //   let card = document.createElement("div");
+    //   card.classList.add("flip-card");
+    //   let flipCardInner = document.createElement("div");
+    //   flipCardInner.classList.add("flip-card-inner");
+    //   let flipCardFront = document.createElement("flip-card-front");
+    //   const cover = document.createElement("img");
+    //   cover.src = data[i].cover;
+    //   const U_HP = "horsepower" + data[i].horsepower;
+    //   card.appendChild(flipCardInner);
+    //   card.appendChild(flipCardFront);
+    //   card.appendChild(cover);
+    //   card.appendChild(U_HP);
+    //   cards.appendChild(card);
+    //   }
+  });
+
 const output = document.querySelector("output");
 
 const datalist = document.querySelector("datalist");
-
-// form.addEventListener("submit", (event) => {
-//   // stop the form submitting and reloading the page
-//   event.preventDefault();
-
-//   // clear out any previous results
-//   output.innerHTML = "";
-
-//   // get the value of the field with name="pokemon"
-//   const formData = new FormData(event.target);
-// });
 
 const login_button = document.getElementById("login");
 const logout_button = document.getElementById("logout");
@@ -36,7 +47,9 @@ const keyUp = () => {
     .then((data) => {
       if (data.error) {
         // show something to the user
-        alert("error");
+        alert(
+          "The value you have entered is incorrect , please try typing a valid car name"
+        );
       }
 
       datalist.innerHTML = "";
@@ -105,3 +118,34 @@ const onClick = () => {
       });
   });
 };
+
+// const mySearch = myInput;
+document.getElementById("submit").addEventListener("click", (event) => {
+  const myInput = document.getElementById("car");
+  event.preventDefault();
+  fetch(`http://localhost:3000/search/${myInput.value}`)
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      if (data.error) {
+        window.location.href = "http://localhost:3000/log-in";
+      } else {
+        console.log(data);
+        output.innerHTML = " ";
+        const make = document.createElement("h2");
+        make.textContent = data[0].make + " " + data[0].model;
+        const HP = document.createElement("div");
+        HP.textContent = "horsepower : " + data[0].horsepower;
+        const price = document.createElement("div");
+        price.textContent = "price as new : " + data[0].price + "$";
+        const img = document.createElement("img");
+        img.src = data[0].img_url;
+        output.appendChild(make);
+        output.appendChild(HP);
+        output.appendChild(price);
+        output.appendChild(img);
+        console.log(data[0]);
+      }
+    });
+});
