@@ -25,6 +25,7 @@ function home() {
   return layout(`
   
   <div class="content">
+  <div class="flipCards" id="flipCards"></div>
     <h1 ><b>F</b>ind Your Car</h1>
     
     <p><p><p>The platform will provide you selected information and an image,<br>
@@ -48,8 +49,7 @@ function home() {
           </datalist>
           <input class="searchbutton" type="submit" value="Search" id="submit" required/>
           <output></output>
-
-  <div class="flipCards" id="flipCards"></div> 
+          <output2 class="output2"></output2>
 
         </form>
         </div>

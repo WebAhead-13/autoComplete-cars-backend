@@ -79,11 +79,15 @@ datalist {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-items: center;
+  /* justify-items: center; */
+  justify-content: space-around;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
+  border-radius: 20%;
   background-color: transparent;
   width: 300px;
   height: 300px;
@@ -124,16 +128,17 @@ datalist {
 
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background: transparent;
   color: white;
   transform: rotateY(180deg);
 }
 
-/* .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
+.flip_car_img {
+  border-radius: 20%;
+  width: 300px;
+  height: 300px;
+}
+
 .image {
   width: 50%;
   float: right;
@@ -217,9 +222,10 @@ body {
 output {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin: 1rem auto;
   box-shadow: 0 3px 7px -1px rgba(#000, 0.1);
-  margin-bottom: 1.6%;
+  margin-bottom: 20px;
   background: inherit;
   line-height: 1.4;
   font-family: sans-serif;
@@ -249,4 +255,11 @@ output div {
   margin-left: auto;
   padding: 0;
   list-style: none;
+}
+
+.output2 {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  padding: 10px;
 }

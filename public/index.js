@@ -23,7 +23,8 @@ fetch(`http://localhost:3000/unique_cars`)
       flip_card_inner.appendChild(flip_card_front);
 
       const front_image = document.createElement("img");
-      front_image.src = "./download.png";
+      front_image.src = element.cover;
+      front_image.classList.add("flip_car_img");
       flip_card_front.appendChild(front_image);
 
       const horsepower_ = document.createElement("p");
@@ -104,61 +105,6 @@ const keyUp = () => {
     });
 };
 
-const onClick = () => {
-  // const mySearch = myInput;
-  document.getElementById("submit").addEventListener("submit", (event) => {
-    const myInput = document.getElementById("car");
-    event.preventDefault();
-    fetch(`http://localhost:3000/search/${myInput.value}`)
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        if (data.error) {
-          window.location.href = "http://localhost:3000/log-in";
-        }
-        // console.log(data);
-        else {
-          output.innerHTML = "";
-          const make = document.createElement("div");
-          make.textContent = data[0].make + " " + data[0].model;
-          const HP = document.createElement("div");
-          HP.textContent = "horsepower : " + data[0].horsepower;
-          const price = document.createElement("div");
-          price.textContent = "price as new : " + data[0].price + "$";
-          const img = document.createElement("img");
-          img.src = data[0].img_url;
-          output.appendChild(make);
-          output.appendChild(HP);
-          output.appendChild(price);
-          output.appendChild(img);
-          console.log(data[0]);
-        }
-        // let card = document.createElement("div");
-        //       card.classList.add("card");
-
-        //       let stat =document.createElement("div")
-        //       const title = document.createElement("h2");
-        //       title.textContent = pokemonData.name;
-
-        //       const statsArr = pokemonData.stats;
-        //       card.appendChild(title);
-        //       for(let i=0;i<6;i++) {
-        //           let discr1=document.createElement("h2")
-
-        //           let icon =document.createElement("img")
-        //           icon.src = 'icon'+i+'.png'
-        //           icon.width = 40
-
-        //           discr1.innerHTML=statsArr[i].stat.name + " : " + statsArr[i].base_stat;
-        //           discr1.classList.add("h2"+ i)
-        //           discr1.appendChild(icon)
-        //           card.appendChild(discr1)
-        //       }
-      });
-  });
-};
-
 let APIKEY = "bFxMie1ZPZn4Cfo76DER6CTzbJjb4rcc";
 // const mySearch = myInput;
 document.getElementById("submit").addEventListener("click", (event) => {
@@ -191,6 +137,7 @@ document.getElementById("submit").addEventListener("click", (event) => {
     });
   const ch = myInput.value.toLowerCase();
   console.log(myInput.value);
+  const output2 = document.querySelector("output2");
   fetch(
     `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=2&q=${myInput.value}`
   )
@@ -200,16 +147,17 @@ document.getElementById("submit").addEventListener("click", (event) => {
     })
 
     .then((json) => {
-      for (let i = 0; i < 2; i++) {
+      output2.innerHTML = "";
+      for (let i = 0; i < 1; i++) {
         let img_ = document.createElement("img");
         img_.src = json.data[i].images.downsized.url;
         console.log(img_);
-        output.appendChild(img_);
+        output2.appendChild(img_);
       }
     })
     .catch((error) => {
       const error_msg = document.createElement("h2");
       error_msg.innerHTML = "we have no GIF for that";
-      output.appendChild(error_msg);
+      output2.appendChild(error_msg);
     });
 });
