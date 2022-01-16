@@ -159,6 +159,7 @@ const onClick = () => {
   });
 };
 
+let APIKEY = "bFxMie1ZPZn4Cfo76DER6CTzbJjb4rcc";
 // const mySearch = myInput;
 document.getElementById("submit").addEventListener("click", (event) => {
   const myInput = document.getElementById("car");
@@ -187,5 +188,28 @@ document.getElementById("submit").addEventListener("click", (event) => {
         output.appendChild(img);
         console.log(data[0]);
       }
+    });
+  const ch = myInput.value.toLowerCase();
+  console.log(myInput.value);
+  fetch(
+    `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=2&q=${myInput.value}`
+  )
+    .then((response) => {
+      if (!response.ok) throw new Error(response.status);
+      return response.json();
+    })
+
+    .then((json) => {
+      for (let i = 0; i < 2; i++) {
+        let img_ = document.createElement("img");
+        img_.src = json.data[i].images.downsized.url;
+        console.log(img_);
+        output.appendChild(img_);
+      }
+    })
+    .catch((error) => {
+      const error_msg = document.createElement("h2");
+      error_msg.innerHTML = "we have no GIF for that";
+      output.appendChild(error_msg);
     });
 });
